@@ -1,5 +1,5 @@
 {
-  "name": "district-5/slimify-middleware",
+  "name": "district5/slimify-middleware",
   "description": "Slimify is a helper library for Slim Framework 4",
   "keywords": [],
   "homepage": "https://github.com/district-5/php-slimify-middleware",
@@ -16,7 +16,8 @@
     "slim/php-view": "^2.2",
     "slim/psr7": "^0.5.0",
     "ext-json": "*",
-    "rogerthomas84/skinny": "^2.0"
+    "rogerthomas84/skinny": "^2.0",
+    "district5/slimify": "*"
   },
   "autoload": {
     "psr-0": { "Slimify": "src" }

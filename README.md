@@ -10,7 +10,7 @@ Requirements...
     "ext-zlib": "*",
     "slim/psr7": "^0.5",
     "slim/slim": "^4.1",
-    "district-5/slimify": "*"
+    "district5/slimify": "*"
 }
 ````
 

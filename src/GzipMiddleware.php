@@ -1,7 +1,7 @@
 <?php
+
 namespace SlimifyMiddleware;
 
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Slim\App;
 use Slim\Psr7\Request;
@@ -12,14 +12,15 @@ use Slim\Psr7\Stream;
  * @noinspection PhpUnused
  * @package SlimifyMiddleware
  */
-class GzipMiddleware
+class GzipMiddleware extends AbstractMiddleware
 {
     /**
      * Add Gzip middleware to the app.
      *
      * @param App $app
+     * @noinspection PhpComposerExtensionStubsInspection
      */
-    public static function add(App $app)
+    public static function add(App $app): void
     {
         $app->add(function (Request $request, RequestHandlerInterface $handler) {
             if ($request->hasHeader('Accept-Encoding')) {
@@ -30,7 +31,6 @@ class GzipMiddleware
                 }
             }
 
-            /** @var ResponseInterface $response */
             $response = $handler->handle(
                 $request
             );

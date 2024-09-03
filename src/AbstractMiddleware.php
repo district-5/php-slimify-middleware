@@ -1,4 +1,5 @@
 <?php
+
 namespace SlimifyMiddleware;
 
 use Slim\App;
@@ -15,5 +16,5 @@ abstract class AbstractMiddleware
      *
      * @param App $app
      */
-    abstract public static function add(App $app);
+    abstract public static function add(App $app): void;
 }

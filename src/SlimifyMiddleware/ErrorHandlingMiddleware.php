@@ -1,6 +1,9 @@
 <?php
+
 namespace SlimifyMiddleware;
 
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Slim\Exception\HttpBadRequestException;
@@ -22,13 +25,13 @@ class ErrorHandlingMiddleware
     /**
      * @var string
      */
-    private $viewKey = null;
+    private string $viewKey;
 
     /**
      * ErrorHandlingMiddleware constructor.
      * @param string $viewKey
      */
-    public function __construct($viewKey = 'default')
+    public function __construct(string $viewKey = 'default')
     {
         $this->viewKey = $viewKey;
     }
@@ -41,8 +44,11 @@ class ErrorHandlingMiddleware
      * @param bool $logErrorDetails
      * @param LoggerInterface|null $logger
      * @return ResponseInterface|Response
+     * @throws Throwable
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
-    public function __invoke(Request $request, Throwable $e, bool $showError, bool $logError, bool $logErrorDetails, ?LoggerInterface $logger = null)
+    public function __invoke(Request $request, Throwable $e, bool $showError, bool $logError, bool $logErrorDetails, ?LoggerInterface $logger = null): Response|ResponseInterface
     {
         $static = SlimifyStatic::retrieve();
         $app = $static->getApp();

@@ -11,14 +11,17 @@
     }
   ],
   "require": {
-    "php": ">=7.1 || >= 7.4 || >=8.1",
-    "slim/slim": "*",
+    "php": ">=8.1",
+    "slim/slim": "5.x-dev",
     "slim/php-view": "*",
     "slim/psr7": "*",
     "ext-json": "*",
-    "district5/slimify": "*"
+    "district5/slimify": "feature/5.x-dev"
   },
   "autoload": {
     "psr-0": { "Slimify": "src" }
+  },
+  "suggest": {
+    "ext-zlib": "To use the GzipMiddleware to enable gzip compression"
   }
 }

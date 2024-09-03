@@ -1,18 +1,13 @@
-SlimifyMiddleware
-=================
+District5 - Slimify Middleware
+======
 
-Requirements...
----------------
+### Composer...
 
-```json
-{
-    "php": ">=7.1.0",
-    "ext-zlib": "*",
-    "slim/psr7": "^0.5",
-    "slim/slim": "^4.1",
-    "district5/slimify": "*"
-}
-````
+Use composer to add this library as a dependency onto your project.
+
+```
+composer require district5/slimify-middleware
+```
 
 Available middlewares...
 ------------------------

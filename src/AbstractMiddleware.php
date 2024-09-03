@@ -1,4 +1,5 @@
 <?php
+
 namespace SlimifyMiddleware;
 
 use Slim\App;

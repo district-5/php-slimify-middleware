@@ -14,7 +14,6 @@ use Slim\Exception\HttpUnauthorizedException;
 use Slim\Psr7\Request;
 use Slim\Psr7\Response;
 use Slimify\SlimifyStatic;
-use Throwable;
 
 /**
  * Class ErrorHandlingMiddleware

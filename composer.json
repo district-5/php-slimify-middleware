@@ -1,6 +1,6 @@
 {
   "name": "district5/slimify-middleware",
-  "description": "Slimify is a helper library for Slim Framework 4",
+  "description": "Slimify is a helper library for Slim Framework",
   "keywords": [],
   "homepage": "https://github.com/district-5/php-slimify-middleware",
   "license": "mit",
@@ -12,14 +12,16 @@
   ],
   "require": {
     "php": ">=8.1",
+    "ext-json": "*",
+    "district5/slimify": "feature/5.x-dev",
     "slim/slim": "5.x-dev",
     "slim/php-view": "*",
-    "slim/psr7": "*",
-    "ext-json": "*",
-    "district5/slimify": "feature/5.x-dev"
+    "slim/psr7": "*"
   },
   "autoload": {
-    "psr-0": { "Slimify": "src" }
+    "psr-4": {
+      "SlimifyMiddleware\\": "src/"
+    }
   },
   "suggest": {
     "ext-zlib": "To use the GzipMiddleware to enable gzip compression"
